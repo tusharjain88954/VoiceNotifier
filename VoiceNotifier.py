@@ -4,13 +4,14 @@ import time
 import subprocess
 from tkinter import *
 
-
 root = Tk() # Creating root for Voice-Notifier Window
-root.geometry("500x500") 
+root.iconbitmap("remainder.ico")
 root.title("VoiceNotifier")
-# root.configure(bg="#1E1B1B")
+root.configure(bg="#1E1B1B")
+root.geometry("300x200") 
 Title = StringVar() # StringVar is used for modifying widget text
 msg = StringVar()
+
 
 
 def notification_():
@@ -30,19 +31,14 @@ def notification_():
         subprocess.call('espeak '+'"'+msg_+'"', shell=True)
         time.sleep(10) # remainder repeating time
 
-label1 = Label(root , text="Enter title") 
-label1.pack()
+Label(root , text="Enter title",bg="#1E1B1B",fg="#A22314").grid(row=1,column=1)
 
-e1 = Entry(root , textvariable=Title)
-e1.pack()
+Entry(root , textvariable=Title,bg="#1E1B1B",fg="#279DDE").grid(row=1,column=2)
 
-label2 = Label(root , text="Enter a short message")
-label2.pack()
+Label(root , text="Enter a short message",bg="#1E1B1B",fg="#A22314").grid(row=2,column=1)
 
-e2 = Entry(root , textvariable=msg)
-e2.pack()
+Entry(root , textvariable=msg,bg="#1E1B1B",fg="#279DDE").grid(row=2,column=2)
 
-button1 = Button(root , text="Set Remainder" ,command=notification_) # on clicking button , it will call notification_ function
-button1.pack()
+Button(root , text="Set Remainder" ,bg="#1E1B1B",fg="#A22314",command=notification_).grid(row=3,column=2) # on clicking button , it will call notification_ function
 
 root.mainloop()   
