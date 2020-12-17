@@ -29,7 +29,7 @@ def notification_():
             timeout = 1 
         )
         subprocess.call('espeak '+'"'+msg_+'"', shell=True)
-        time.sleep(10) # remainder repeating time
+        time.sleep(7200) # remainder repeating time
 
 Label(root , text="Enter title",bg="#1E1B1B",fg="#A22314").grid(row=1,column=1)
 
