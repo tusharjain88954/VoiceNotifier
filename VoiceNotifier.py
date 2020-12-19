@@ -5,7 +5,7 @@ import subprocess
 from tkinter import *
 
 root = Tk() # Creating root for Voice-Notifier Window
-root.iconbitmap("remainder.ico")
+# root.iconbitmap("remainder.ico")
 root.title("VoiceNotifier")
 root.configure(bg="#1E1B1B")
 root.geometry("300x200") 
@@ -19,9 +19,7 @@ def notification_():
     while(True):
         Title_ = Title.get()
         msg_ = msg.get() 
-        pwd=os.getcwdb()# get the current working directory(byte string format).
-        path_to_icon = pwd + b'\\remainder.ico'
-
+        path_to_icon = "D:\\coding_files\\remainder.ico"
         notification.notify(
             title = Title_ ,
             message = msg_,
