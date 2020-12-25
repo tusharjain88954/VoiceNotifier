@@ -26,7 +26,7 @@ pip install plyer
 
 ### Running
 
-Firstly Change Current Directory address in VoiceNotifier.py file
+Firstly change manually remainder icon address in VoiceNotifier.py file
 
 Run this in terminal
 ```

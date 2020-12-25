@@ -11,7 +11,7 @@ root.configure(bg="#1E1B1B")
 root.geometry("300x200") 
 Title = StringVar() # StringVar is used for modifying widget text
 msg = StringVar()
-
+t = IntVar()
 
 
 def notification_():
@@ -19,23 +19,28 @@ def notification_():
     while(True):
         Title_ = Title.get()
         msg_ = msg.get() 
+        t_ = t.get()
         path_to_icon = "D:\\coding_files\\remainder.ico" # Current directory address
         notification.notify(
             title = Title_ ,
             message = msg_,
             app_icon = path_to_icon,
-            timeout = 1 # notification stay time
+            timeout = t_ # notification stay time
         )
         subprocess.call('espeak '+'"'+msg_+'"', shell=True)
         time.sleep(7200) # remainder repeating time
 
-Label(root , text="Enter title",bg="#1E1B1B",fg="#A22314").grid(row=1,column=1)
+Label(root , text="Title",bg="#1E1B1B",fg="#A22314").grid(row=1,column=1)
 
 Entry(root , textvariable=Title,bg="#1E1B1B",fg="#279DDE").grid(row=1,column=2)
 
-Label(root , text="Enter a short message",bg="#1E1B1B",fg="#A22314").grid(row=2,column=1)
+Label(root , text="Message",bg="#1E1B1B",fg="#A22314").grid(row=2,column=1)
 
 Entry(root , textvariable=msg,bg="#1E1B1B",fg="#279DDE").grid(row=2,column=2)
+
+Label(root , text="Time",bg="#1E1B1B",fg="#A22314").grid(row=2,column=1)
+
+Entry(root , textvariable=t,bg="#1E1B1B",fg="#279DDE").grid(row=2,column=2)
 
 Button(root , text="Set Remainder" ,bg="#1E1B1B",fg="#A22314",command=notification_).grid(row=3,column=2) # on clicking button , it will call notification_ function
 
