@@ -19,12 +19,12 @@ def notification_():
     while(True):
         Title_ = Title.get()
         msg_ = msg.get() 
-        path_to_icon = "D:\\coding_files\\remainder.ico"
+        path_to_icon = "D:\\coding_files\\remainder.ico" # Current directory address
         notification.notify(
             title = Title_ ,
             message = msg_,
             app_icon = path_to_icon,
-            timeout = 1 
+            timeout = 1 # notification stay time
         )
         subprocess.call('espeak '+'"'+msg_+'"', shell=True)
         time.sleep(7200) # remainder repeating time
