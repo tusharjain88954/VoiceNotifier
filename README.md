@@ -18,12 +18,12 @@ python3 --version
 pip install plyer
 ```
 * Install eSpeak
-```
+
 [eSpeak Download Link For Windows](https://sourceforge.net/projects/espeak/files/espeak/espeak-1.48/setup_espeak-1.48.04.exe/download)
 
 [eSpeak Download Link For Linux](https://sourceforge.net/projects/espeak/files/espeak/espeak-1.48/espeakedit-1.48.03.zip/download)
 
-```
+
 ### Running
 
 Firstly Change Current Directory address in VoiceNotifier.py file
