@@ -25,10 +25,10 @@ def notification_():
             title = Title_ ,
             message = msg_,
             app_icon = path_to_icon,
-            timeout = t_ # notification stay time
+            timeout = 2 # notification stay time
         )
         subprocess.call('espeak '+'"'+msg_+'"', shell=True)
-        time.sleep(7200) # remainder repeating time
+        time.sleep(t_) # remainder repeating time
 
 Label(root , text="Title",bg="#1E1B1B",fg="#A22314").grid(row=1,column=1)
 
@@ -38,10 +38,10 @@ Label(root , text="Message",bg="#1E1B1B",fg="#A22314").grid(row=2,column=1)
 
 Entry(root , textvariable=msg,bg="#1E1B1B",fg="#279DDE").grid(row=2,column=2)
 
-Label(root , text="Time",bg="#1E1B1B",fg="#A22314").grid(row=2,column=1)
+Label(root , text="Time in seconds",bg="#1E1B1B",fg="#A22314").grid(row=3,column=1)
 
-Entry(root , textvariable=t,bg="#1E1B1B",fg="#279DDE").grid(row=2,column=2)
+Entry(root , textvariable=t,bg="#1E1B1B",fg="#279DDE").grid(row=3,column=2)
 
-Button(root , text="Set Remainder" ,bg="#1E1B1B",fg="#A22314",command=notification_).grid(row=3,column=2) # on clicking button , it will call notification_ function
+Button(root , text="Set Remainder" ,bg="#1E1B1B",fg="#A22314",command=notification_).grid(row=4,column=2) # on clicking button , it will call notification_ function
 
 root.mainloop()   
